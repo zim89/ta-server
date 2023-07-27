@@ -18,7 +18,7 @@ dotenv.config();
 app.use(cors());
 
 // Constants
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
@@ -87,7 +87,7 @@ app.patch(
   TattooController.update,
 );
 
-app.listen(PORT, err => {
+app.listen(process.env.PORT || 4444, err => {
   if (err) {
     return console.log(err);
   }
